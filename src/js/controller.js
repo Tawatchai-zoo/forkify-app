@@ -11,10 +11,10 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime/runtime';
 
-if (module.hot) {
-    module.hot.accept();
-    // Clear console when save
-}
+// if (module.hot) {
+//     module.hot.accept();
+//     // Clear console when save
+// }
 
 // when hash changed or browser is loaded
 const controlRecipes = async function () {
@@ -80,7 +80,6 @@ const controlServings = function (newServings) {
 };
 
 const controlAddBookmark = function () {
-    console.log(model.state.bookmarks);
     // Add/remove bookmarks
     if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
     else model.deleteBookmark(model.state.recipe.id);
@@ -90,8 +89,6 @@ const controlAddBookmark = function () {
 
     // Render bookmarksView
     bookmarksView.render(model.state.bookmarks);
-    console.log(model.state.recipe);
-    console.log(model.state.bookmarks);
 };
 
 const controlBookmarks = function () {
@@ -110,7 +107,6 @@ const controlAddRecipe = async function (newRecipe) {
 
         // Upload the new recipe data
         await model.uploadRecipe(newRecipe);
-        console.log(model.state.recipe);
 
         // Render recipe
         recipeView.render(model.state.recipe);
