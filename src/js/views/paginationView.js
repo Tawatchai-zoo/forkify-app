@@ -67,7 +67,6 @@ class PaginationView extends View {
                         <use href="${icons}#icon-arrow-right"></use>
                     </svg>
                 </button>
-                <div style="display: block; text-align:center;">${curPage}</div>
             `;
         }
 
